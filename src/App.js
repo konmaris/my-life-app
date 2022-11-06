@@ -1,49 +1,75 @@
+import {
+  AppContainerStyle,
+  CenterContainerStyle,
+  SidebarContainerStyle,
+  TitleStyle,
+  ContentContainerStyle,
+  SidebarItemStyle,
+  SidebarItemLabelStyle,
+} from "./styles/AppStyles.jsx";
+
+import { useState } from "react";
+
+const SidebarItems = [
+  {
+    label: "📅 Weekly schedule",
+    icon: null,
+    route: "/weekly_schedule",
+  },
+  {
+    label: "🎯 Monthly goals",
+    icon: null,
+    route: "/monthly_goals",
+  },
+  {
+    label: "⏰ Appointments",
+    icon: null,
+    route: "/appointments",
+  },
+  {
+    label: "⚙️ Settings",
+    icon: null,
+    route: "/settings",
+  },
+];
+
+function SidebarItem({ label, icon, route }) {
+  const [hover, setHover] = useState(false);
+  return (
+    <li
+      style={{
+        ...SidebarItemStyle,
+        backgroundColor: !hover ? "#ffd9d9" : "#ffe1e1",
+      }}
+      onMouseOver={() => {
+        setHover(true);
+      }}
+      onMouseLeave={() => {
+        setHover(false);
+      }}
+    >
+      <p style={SidebarItemLabelStyle}>{label}</p>
+    </li>
+  );
+}
+
+function Sidebar() {
+  const sidebarItems = SidebarItems.map((item) => {
+    return (
+      <SidebarItem label={item.label} icon={item.icon} route={item.route} />
+    );
+  });
+
+  return <ul>{sidebarItems}</ul>;
+}
+
 function App() {
-  const AppContainerStyle = {
-    width: "100%",
-    height: "100vh",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  };
-
-  const CenterContainerStyle = {
-    // backgroundColor: "#ececec",
-    width: "70%",
-    height: "70%",
-    borderRadius: "15px",
-    display: "flex",
-  };
-
-  const SidebarContainerStyle = {
-    backgroundColor: "#ffeaea",
-    width: "25%",
-    height: "100%",
-    borderRadius: "15px",
-    marginRight: "1%",
-  };
-
-  const ContentContainerStyle = {
-    backgroundColor: "#ffbbbb",
-    width: "74%",
-    height: "100%",
-    borderRadius: "15px",
-  };
-
-  const TitleStyle = {
-    margin: 0,
-    fontSize: 32,
-    marginLeft: 30,
-    marginTop: 20,
-    color: "#9c5d5d",
-    fontWeight: "500",
-  };
-
   return (
     <div style={AppContainerStyle}>
       <div style={CenterContainerStyle}>
         <div style={SidebarContainerStyle}>
-          <p style={TitleStyle}>Elena's life</p>
+          <p style={TitleStyle}>Elena's Life 🌹</p>
+          <Sidebar />
         </div>
         <div style={ContentContainerStyle}></div>
       </div>
