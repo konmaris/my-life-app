@@ -1,5 +1,10 @@
 export const SidebarItems = [
   {
+    label: "🏠 Home",
+    icon: null,
+    page_id: "home",
+  },
+  {
     label: "📅 Weekly schedule",
     icon: null,
     page_id: "weekly_schedule",

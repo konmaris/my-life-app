@@ -9,9 +9,11 @@ import {
 
 import Sidebar from "./components/Sidebar";
 import useActivePage from "./hooks/useActivePage";
+import { useEffect } from "react";
 
 function App() {
-  const { activePage } = useActivePage();
+  const { activePage, setActivePage } = useActivePage();
+
   return (
     <div style={AppContainerStyle}>
       <div style={CenterContainerStyle}>
