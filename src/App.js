@@ -11,7 +11,7 @@ import Sidebar from "./components/Sidebar";
 import useActivePage from "./hooks/useActivePage";
 
 function App() {
-  const { activePage, setActivePage } = useActivePage();
+  const { activePage } = useActivePage();
   return (
     <div style={AppContainerStyle}>
       <div style={CenterContainerStyle}>
