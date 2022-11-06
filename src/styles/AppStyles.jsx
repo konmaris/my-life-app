@@ -2,6 +2,7 @@ export const AppContainerStyle = {
   width: "100%",
   height: "100vh",
   display: "flex",
+  flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
   backgroundColor: "#e9c6c6",
@@ -33,12 +34,12 @@ export const ContentContainerStyle = {
 
 export const TitleStyle = {
   margin: 0,
-  fontSize: 32,
+  fontSize: "2rem",
   marginLeft: 30,
   marginBottom: 40,
   marginTop: 20,
   color: "#9c5d5d",
-  fontWeight: "500",
+  fontWeight: "600",
 };
 
 export const SidebarItemStyle = {
@@ -58,6 +59,15 @@ export const SidebarItemLabelStyle = {
   margin: 0,
   marginLeft: "15px",
   color: "#985959",
-  fontSize: "22px",
+  fontSize: "1.4rem",
   fontWeight: 400,
+};
+
+export const ContentTitleStyle = {
+  margin: 0,
+  fontSize: "2.4rem",
+  fontWeight: 600,
+  marginTop: 30,
+  marginLeft: 30,
+  color: "#a85555",
 };

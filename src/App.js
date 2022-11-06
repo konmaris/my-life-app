@@ -4,66 +4,14 @@ import {
   SidebarContainerStyle,
   TitleStyle,
   ContentContainerStyle,
-  SidebarItemStyle,
-  SidebarItemLabelStyle,
+  ContentTitleStyle,
 } from "./styles/AppStyles.jsx";
 
-import { useState } from "react";
-
-const SidebarItems = [
-  {
-    label: "📅 Weekly schedule",
-    icon: null,
-    route: "/weekly_schedule",
-  },
-  {
-    label: "🎯 Monthly goals",
-    icon: null,
-    route: "/monthly_goals",
-  },
-  {
-    label: "⏰ Appointments",
-    icon: null,
-    route: "/appointments",
-  },
-  {
-    label: "⚙️ Settings",
-    icon: null,
-    route: "/settings",
-  },
-];
-
-function SidebarItem({ label, icon, route }) {
-  const [hover, setHover] = useState(false);
-  return (
-    <li
-      style={{
-        ...SidebarItemStyle,
-        backgroundColor: !hover ? "#ffd9d9" : "#ffe1e1",
-      }}
-      onMouseOver={() => {
-        setHover(true);
-      }}
-      onMouseLeave={() => {
-        setHover(false);
-      }}
-    >
-      <p style={SidebarItemLabelStyle}>{label}</p>
-    </li>
-  );
-}
-
-function Sidebar() {
-  const sidebarItems = SidebarItems.map((item) => {
-    return (
-      <SidebarItem label={item.label} icon={item.icon} route={item.route} />
-    );
-  });
-
-  return <ul>{sidebarItems}</ul>;
-}
+import Sidebar from "./components/Sidebar";
+import useActivePage from "./hooks/useActivePage";
 
 function App() {
+  const { activePage, setActivePage } = useActivePage();
   return (
     <div style={AppContainerStyle}>
       <div style={CenterContainerStyle}>
@@ -71,8 +19,22 @@ function App() {
           <p style={TitleStyle}>Elena's Life 🌹</p>
           <Sidebar />
         </div>
-        <div style={ContentContainerStyle}></div>
+        <div style={ContentContainerStyle}>
+          <p style={ContentTitleStyle}>{activePage?.label}</p>
+        </div>
       </div>
+      <p
+        style={{
+          color: "#b35151",
+          margin: 0,
+          marginTop: 10,
+          marginRight: "35%",
+          width: "100%",
+          textAlign: "right",
+        }}
+      >
+        made with love for Elenakos by Kostantoulis ❤️
+      </p>
     </div>
   );
 }
