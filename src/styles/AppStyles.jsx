@@ -34,9 +34,9 @@ export const ContentContainerStyle = {
 
 export const TitleStyle = {
   margin: 0,
-  fontSize: "2rem",
+  fontSize: "1.6rem",
   marginLeft: 30,
-  marginBottom: 40,
+  marginBottom: "1.2rem",
   marginTop: 20,
   color: "#9c5d5d",
   fontWeight: "600",
@@ -46,10 +46,10 @@ export const SidebarItemStyle = {
   listStyle: "none",
   backgroundColor: "#ffd9d9",
   width: "90%",
-  height: "60px",
+  height: "2.3rem",
   display: "flex",
   alignItems: "center",
-  marginBottom: "25px",
+  marginBottom: "1rem",
   borderRadius: "10px",
   transitionDuration: "0.2s",
   cursor: "pointer",
@@ -59,7 +59,7 @@ export const SidebarItemLabelStyle = {
   margin: 0,
   marginLeft: "15px",
   color: "#985959",
-  fontSize: "1.4rem",
+  fontSize: "0.7rem",
   fontWeight: 400,
 };
 
